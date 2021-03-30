@@ -32,15 +32,34 @@
                 }
             ]
          });
+
+
+         
+         var form = document.getElementById('sheetdb-form');
+         form.addEventListener("submit", e => {
+           e.preventDefault();
+           fetch(form.action, {
+               method : "POST",
+               body: new FormData(document.getElementById("sheetdb-form")),
+           }).then(
+               response => response.json()
+           ).then((html) => {
+             // you can put any JS code here
+             alert('success')
+           });
+         });
+       
+
+
         // -----------------------------
         //  Count Down JS
         // -----------------------------
         $('.timer').syotimer({
-            year: 2020,
-            month: 12,
-            day: 9,
-            hour: 20,
-            minute: 30
+            year: 2021,
+            month: 05,
+            day: 26,
+            hour: 10,
+            minute: 00
         });
         // -----------------------------
         // To Top Init
